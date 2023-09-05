@@ -1,15 +1,32 @@
 <h1 class="text-center m-5">Tous les produits</h1>
+<div class="row"> 
 
-<div class=" container card-group">
-
-  <div *ngFor="let product of getProduct()">
-    <div class="card" style="width: 18rem;">
-        <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">{{product.name}}</h5>
-          <p class="card-text"> {{product.prixHT}}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+  <div class=" card-group col-8">
+  
+    <div *ngFor="let product of getProduct()">
+      <div class="card m-2 border border-5" style="width: 18rem;">
+          <img src="{{product.imageUrl}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text"> {{product.prixHT}}</p>
+            <div class="col-2 mx-auto">
+              <a href="#" class="btn btn-primary">Ajouter</a>
+            </div>
+          </div>
         </div>
+    </div>
+  </div>
+  
+  <div class="col-3">
+    <div class="card mt-5 mx-auto">
+      <div class="card-header text-center bg-danger text-white">
+        Panier
       </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Quantité : </li>
+        <li class="list-group-item">Prix HT :</li>
+        <li class="list-group-item">Prix TTC :</li>
+      </ul>
+    </div>
   </div>
 </div>
